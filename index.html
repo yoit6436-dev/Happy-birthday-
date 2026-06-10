@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HBD TO MY FAVORITE HUMAN ✨</title>
+    <!-- Tailwind CSS for peak styling -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts for that premium typography -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;800&family=Syne:wght@700;800&display=swap" rel="stylesheet">
+    
+    <style>
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: #0b0b0f;
+        }
+        .heading-font {
+            font-family: 'Syne', sans-serif;
+        }
+        /* Custom neon glow effects */
+        .glow-card {
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            backdrop-filter: blur(12px);
+            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .glow-card:hover {
+            transform: translateY(-5px);
+            border-color: rgba(244, 63, 94, 0.4);
+            box-shadow: 0 10px 30px -10px rgba(244, 63, 94, 0.2);
+        }
+    </style>
+</head>
+<body class="text-slate-100 min-h-screen overflow-x-hidden selection:bg-rose-500 selection:text-white">
+
+    <!-- HERO SECTION -->
+    <main class="max-w-5xl mx-auto px-4 py-12 md:py-24">
+        <header class="text-center space-y-4 mb-16">
+            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-rose-500/10 text-rose-400 text-sm font-semibold tracking-wide uppercase border border-rose-500/20 animate-pulse">
+                <span>✨ 11 . 06 . 2026 ✨</span>
+            </div>
+            <h1 class="heading-font text-5xl md:text-8xl font-extrabold tracking-tight bg-gradient-to-r from-rose-400 via-fuchsia-500 to-indigo-400 bg-clip-text text-transparent">
+                HAPPY BDAY,<br>MY WHOLE HEART.
+            </h1>
+            <p class="text-slate-400 max-w-md mx-auto text-sm md:text-base">
+                An aesthetic digital shrine dedicated to the person who lives rent-free in my mind 24/7.
+            </p>
+        </header>
+
+        <!-- BENTO GRID LAYOUT -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+            
+            <!-- Box 1: The Countdown -->
+            <div class="glow-card bg-white/5 rounded-3xl p-6 md:col-span-2 flex flex-col justify-between min-h-[200px]">
+                <div>
+                    <h3 class="text-xs uppercase tracking-widest text-slate-400 font-semibold mb-2">Time Until You Level Up</h3>
+                    <p class="text-sm text-rose-400 font-medium">Resetting the simulation on June 11...</p>
+                </div>
+                <div id="countdown" class="heading-font text-3xl md:text-5xl font-bold grid grid-cols-4 gap-2 text-center my-4">
+                    <!-- Dynamic numbers inject here -->
+                    <div>00<span class="block text-xs font-sans font-normal text-slate-500 uppercase mt-1">Days</span></div>
+                    <div>00<span class="block text-xs font-sans font-normal text-slate-500 uppercase mt-1">Hrs</span></div>
+                    <div>00<span class="block text-xs font-sans font-normal text-slate-500 uppercase mt-1">Mins</span></div>
+                    <div>00<span class="block text-xs font-sans font-normal text-slate-500 uppercase mt-1">Secs</span></div>
+                </div>
+            </div>
+
+            <!-- Box 2: Quick Status -->
+            <div class="glow-card bg-gradient-to-br from-rose-500/20 to-indigo-500/20 rounded-3xl p-6 flex flex-col justify-between">
+                <div class="text-right">
+                    <span class="text-xs bg-black/40 text-slate-300 px-2.5 py-1 rounded-full border border-white/10">Status: Obsessed</span>
+                </div>
+                <div>
+                    <h3 class="heading-font text-2xl font-bold mb-1">Year 2026 Edition</h3>
+                    <p class="text-xs text-slate-400">Upgraded, prettier, and wiser than ever.</p>
+                </div>
+            </div>
+
+            <!-- Box 3: Photodump Placeholder -->
+            <div class="glow-card bg-white/5 rounded-3xl p-6 md:row-span-2 min-h-[300px] flex flex-col justify-between relative overflow-hidden group">
+                <!-- Replace URL below with your actual photo -->
+                <div class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1518199266791-5375a83190b7?q=80&w=600')] bg-cover bg-center mix-blend-overlay opacity-40 group-hover:scale-105 transition-transform duration-500"></div>
+                <div class="relative z-10">
+                    <span class="text-xs uppercase tracking-widest text-rose-300 font-semibold">The Aesthetic</span>
+                </div>
+                <div class="relative z-10">
+                    <h4 class="heading-font text-xl font-bold">"You are the main character."</h4>
+                    <p class="text-xs text-slate-400 mt-1">Manifesting the best year yet for you.</p>
+                </div>
+            </div>
+
+            <!-- Box 4: Interactive Love Meter -->
+            <div class="glow-card bg-white/5 rounded-3xl p-6 flex flex-col justify-between">
+                <div>
+                    <h3 class="text-xs uppercase tracking-widest text-slate-400 font-semibold mb-4">Vibe Check</h3>
+                    <p class="text-sm text-slate-300 mb-4">How much do I love you today?</p>
+                </div>
+                <button onclick="boostLove()" class="w-full bg-white text-black font-bold py-3 px-4 rounded-2xl hover:bg-rose-400 hover:text-white transition-colors duration-300 text-sm flex items-center justify-center gap-2">
+                    <span>Press to boost energy</span> ⚡
+                </button>
+                <div class="mt-3 text-center">
+                    <span id="love-counter" class="text-xs text-rose-400 font-mono">Current level: 999,999%</span>
+                </div>
+            </div>
+
+            <!-- Box 5: The Note -->
+            <div class="glow-card bg-white/5 rounded-3xl p-6 flex flex-col justify-between">
+                <div>
+                    <h3 class="text-xs uppercase tracking-widest text-slate-400 font-semibold mb-2">The Receipt</h3>
+                    <p class="text-sm text-slate-300 leading-relaxed italic">
+                        "Thank you for matching my energy, dealing with my chaotic moods, and making the real world feel lighter. You're my favorite POV."
+                    </p>
+                </div>
+                <div class="pt-4 border-t border-white/5 text-xs text-slate-500 flex justify-between items-center">
+                    <span>From: Me</span>
+                    <span>To: My Favorite</span>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- FOOTER -->
+        <footer class="text-center mt-20 text-xs text-slate-600 tracking-wider">
+            MADE WITH CHAOTIC ENERGY & LOVE // 2026
+        </footer>
+    </main>
+
+    <!-- COUNTDOWN & INTERACTIVE SCRIPT -->
+    <script>
+        // Set target date to June 11, 2026
+        const birthdayDate = new Date("June 11, 2026 00:00:00").getTime();
+
+        const updateCountdown = setInterval(() => {
+            const now = new Date().getTime();
+            const distance = birthdayDate - now;
+
+            // Time calculations
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+            const countdownEl = document.getElementById("countdown");
+
+            if (distance < 0) {
+                clearInterval(updateCountdown);
+                countdownEl.innerHTML = `<div class="col-span-4 text-rose-400 animate-bounce">⚡ IT'S YOUR DAY! IT'S PARTY TIME! ⚡</div>`;
+            } else {
+                countdownEl.innerHTML = `
+                    <div>${days.toString().padStart(2, '0')}<span class="block text-xs font-sans font-normal text-slate-500 uppercase mt-1">Days</span></div>
+                    <div>${hours.toString().padStart(2, '0')}<span class="block text-xs font-sans font-normal text-slate-500 uppercase mt-1">Hrs</span></div>
+                    <div>${minutes.toString().padStart(2, '0')}<span class="block text-xs font-sans font-normal text-slate-500 uppercase mt-1">Mins</span></div>
+                    <div>${seconds.toString().padStart(2, '0')}<span class="block text-xs font-sans font-normal text-slate-500 uppercase mt-1">Secs</span></div>
+                `;
+            }
+        }, 1000);
+
+        // Fun love counter logic
+        let currentLove = 999999;
+        function boostLove() {
+            currentLove += Math.floor(Math.random() * 50000) + 10000;
+            document.getElementById("love-counter").innerText = `Current level: ${currentLove.toLocaleString()}% (overclocked)`;
+            
+            // Subtle click vibration feel for that premium web app vibe
+            if (navigator.vibrate) navigator.vibrate(50);
+        }
+    </script>
+</body>
+</html>
