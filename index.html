@@ -4,166 +4,251 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>HBD TO MY FAVORITE HUMAN ✨</title>
-    <!-- Tailwind CSS for peak styling -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Google Fonts for that premium typography -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;800&family=Syne:wght@700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Syne:wght@700;800&display=swap" rel="stylesheet">
     
     <style>
         body {
             font-family: 'Plus Jakarta Sans', sans-serif;
-            background-color: #0b0b0f;
+            background-color: #060609;
         }
         .heading-font {
             font-family: 'Syne', sans-serif;
         }
-        /* Custom neon glow effects */
         .glow-card {
-            border: 1px solid rgba(255, 255, 255, 0.08);
-            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.04);
+            backdrop-filter: blur(20px);
             transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
         }
         .glow-card:hover {
-            transform: translateY(-5px);
-            border-color: rgba(244, 63, 94, 0.4);
-            box-shadow: 0 10px 30px -10px rgba(244, 63, 94, 0.2);
+            transform: translateY(-4px);
+            border-color: rgba(244, 63, 94, 0.25);
+            box-shadow: 0 30px 60px -20px rgba(244, 63, 94, 0.12);
+        }
+        html {
+            scroll-behavior: smooth;
+        }
+        .flame {
+            background: radial-gradient(circle at bottom, #ff9f43 0%, #ff5252 70%, transparent 100%);
+            box-shadow: 0 0 10px #ff9f43, 0 0 20px #ff5252;
+            animation: flicker 0.6s infinite alternate;
+        }
+        @keyframes flicker {
+            0% { transform: scaleX(1) scaleY(1) rotate(-1deg); }
+            100% { transform: scaleX(0.9) scaleY(1.1) rotate(1deg); }
+        }
+        #gallery-display {
+            transition: opacity 0.4s ease-in-out;
         }
     </style>
 </head>
-<body class="text-slate-100 min-h-screen overflow-x-hidden selection:bg-rose-500 selection:text-white">
+<body class="text-slate-100 selection:bg-rose-500 selection:text-white antialiased overflow-x-hidden">
 
-    <!-- HERO SECTION -->
-    <main class="max-w-5xl mx-auto px-4 py-12 md:py-24">
-        <header class="text-center space-y-4 mb-16">
-            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-rose-500/10 text-rose-400 text-sm font-semibold tracking-wide uppercase border border-rose-500/20 animate-pulse">
-                <span>✨ 11 . 06 . 2026 ✨</span>
+    <section class="min-h-screen flex flex-col justify-center items-center px-4 relative overflow-hidden">
+        <div class="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(244,63,94,0.15),transparent_60%)]"></div>
+        
+        <div class="text-center space-y-6 relative z-10 max-w-4xl">
+            <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-rose-500/10 text-rose-400 text-xs font-semibold tracking-widest uppercase border border-rose-500/20 animate-pulse">
+                <span>⚡ CORE SIMULATION RUNNING // VER 20.26 ⚡</span>
             </div>
-            <h1 class="heading-font text-5xl md:text-8xl font-extrabold tracking-tight bg-gradient-to-r from-rose-400 via-fuchsia-500 to-indigo-400 bg-clip-text text-transparent">
-                HAPPY BDAY,<br>MY WHOLE HEART.
+            <h1 class="heading-font text-5xl md:text-9xl font-extrabold tracking-tight bg-gradient-to-r from-rose-400 via-fuchsia-500 to-indigo-400 bg-clip-text text-transparent leading-none">
+                HAPPY BDAY,<br>MAIN CHARACTER.
             </h1>
-            <p class="text-slate-400 max-w-md mx-auto text-sm md:text-base">
-                An aesthetic digital shrine dedicated to the person who lives rent-free in my mind 24/7.
+            <p class="text-slate-400 max-w-md mx-auto text-sm md:text-base font-medium">
+                Welcome to your digital shrine. Scroll down to claim your interface.
             </p>
-        </header>
-
-        <!-- BENTO GRID LAYOUT -->
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-            
-            <!-- Box 1: The Countdown -->
-            <div class="glow-card bg-white/5 rounded-3xl p-6 md:col-span-2 flex flex-col justify-between min-h-[200px]">
-                <div>
-                    <h3 class="text-xs uppercase tracking-widest text-slate-400 font-semibold mb-2">Time Until You Level Up</h3>
-                    <p class="text-sm text-rose-400 font-medium">Resetting the simulation on June 11...</p>
-                </div>
-                <div id="countdown" class="heading-font text-3xl md:text-5xl font-bold grid grid-cols-4 gap-2 text-center my-4">
-                    <!-- Dynamic numbers inject here -->
-                    <div>00<span class="block text-xs font-sans font-normal text-slate-500 uppercase mt-1">Days</span></div>
-                    <div>00<span class="block text-xs font-sans font-normal text-slate-500 uppercase mt-1">Hrs</span></div>
-                    <div>00<span class="block text-xs font-sans font-normal text-slate-500 uppercase mt-1">Mins</span></div>
-                    <div>00<span class="block text-xs font-sans font-normal text-slate-500 uppercase mt-1">Secs</span></div>
-                </div>
+            <div class="pt-8">
+                <a href="#cake-game" class="animate-bounce inline-flex items-center justify-center w-12 h-12 rounded-full border border-white/10 bg-white/5 hover:bg-white/10 transition-colors">
+                    👇
+                </a>
             </div>
+        </div>
+    </section>
 
-            <!-- Box 2: Quick Status -->
-            <div class="glow-card bg-gradient-to-br from-rose-500/20 to-indigo-500/20 rounded-3xl p-6 flex flex-col justify-between">
-                <div class="text-right">
-                    <span class="text-xs bg-black/40 text-slate-300 px-2.5 py-1 rounded-full border border-white/10">Status: Obsessed</span>
-                </div>
-                <div>
-                    <h3 class="heading-font text-2xl font-bold mb-1">Year 2026 Edition</h3>
-                    <p class="text-xs text-slate-400">Upgraded, prettier, and wiser than ever.</p>
-                </div>
+    <section id="cake-game" class="max-w-xl mx-auto px-4 py-16 text-center scroll-mt-6">
+        <div class="mb-8">
+            <div class="inline-flex items-center gap-2 px-2.5 py-0.5 rounded-full bg-amber-500/10 text-amber-400 text-[10px] font-mono border border-amber-500/20 uppercase mb-3">
+                Interactive Module // Mic Access
             </div>
-
-            <!-- Box 3: Photodump Placeholder -->
-            <div class="glow-card bg-white/5 rounded-3xl p-6 md:row-span-2 min-h-[300px] flex flex-col justify-between relative overflow-hidden group">
-                <!-- Replace URL below with your actual photo -->
-                <div class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1518199266791-5375a83190b7?q=80&w=600')] bg-cover bg-center mix-blend-overlay opacity-40 group-hover:scale-105 transition-transform duration-500"></div>
-                <div class="relative z-10">
-                    <span class="text-xs uppercase tracking-widest text-rose-300 font-semibold">The Aesthetic</span>
-                </div>
-                <div class="relative z-10">
-                    <h4 class="heading-font text-xl font-bold">"You are the main character."</h4>
-                    <p class="text-xs text-slate-400 mt-1">Manifesting the best year yet for you.</p>
-                </div>
-            </div>
-
-            <!-- Box 4: Interactive Love Meter -->
-            <div class="glow-card bg-white/5 rounded-3xl p-6 flex flex-col justify-between">
-                <div>
-                    <h3 class="text-xs uppercase tracking-widest text-slate-400 font-semibold mb-4">Vibe Check</h3>
-                    <p class="text-sm text-slate-300 mb-4">How much do I love you today?</p>
-                </div>
-                <button onclick="boostLove()" class="w-full bg-white text-black font-bold py-3 px-4 rounded-2xl hover:bg-rose-400 hover:text-white transition-colors duration-300 text-sm flex items-center justify-center gap-2">
-                    <span>Press to boost energy</span> ⚡
-                </button>
-                <div class="mt-3 text-center">
-                    <span id="love-counter" class="text-xs text-rose-400 font-mono">Current level: 999,999%</span>
-                </div>
-            </div>
-
-            <!-- Box 5: The Note -->
-            <div class="glow-card bg-white/5 rounded-3xl p-6 flex flex-col justify-between">
-                <div>
-                    <h3 class="text-xs uppercase tracking-widest text-slate-400 font-semibold mb-2">The Receipt</h3>
-                    <p class="text-sm text-slate-300 leading-relaxed italic">
-                        "Thank you for matching my energy, dealing with my chaotic moods, and making the real world feel lighter. You're my favorite POV."
-                    </p>
-                </div>
-                <div class="pt-4 border-t border-white/5 text-xs text-slate-500 flex justify-between items-center">
-                    <span>From: Me</span>
-                    <span>To: My Favorite</span>
-                </div>
-            </div>
-
+            <h2 class="heading-font text-2xl font-bold text-amber-400">01 // BLOW OUT THE CANDLES</h2>
+            <p class="text-sm text-slate-400 mt-1">Enable mic access, then blow heavily into your microphone input to extinguish the sparks.</p>
         </div>
 
-        <!-- FOOTER -->
-        <footer class="text-center mt-20 text-xs text-slate-600 tracking-wider">
-            MADE WITH CHAOTIC ENERGY & LOVE // 2026
-        </footer>
-    </main>
+        <div class="glow-card bg-white/[0.02] p-8 rounded-3xl flex flex-col items-center justify-center min-h-[320px] relative overflow-hidden">
+            <div id="mic-prompt" class="absolute inset-0 bg-neutral-950/90 z-20 flex flex-col justify-center items-center p-6 text-center">
+                <span class="text-4xl mb-3">🎂</span>
+                <p class="text-sm font-semibold text-slate-200 max-w-xs mb-4">The cake engine requires microphone verification to calculate breath velocity diagnostics.</p>
+                <button onclick="initMicEngine()" class="px-5 py-2.5 bg-amber-400 text-black font-bold text-xs rounded-xl shadow-lg hover:opacity-90 transition-opacity uppercase tracking-wider">
+                    Activate Breath Sensors
+                </button>
+            </div>
 
-    <!-- COUNTDOWN & INTERACTIVE SCRIPT -->
+            <div class="w-full flex flex-col items-center justify-center space-y-1 mt-6">
+                <div class="flex justify-center items-end gap-4 h-20 px-4">
+                    <div class="candle relative w-3 h-14 bg-gradient-to-t from-rose-500 to-pink-400 rounded-t shadow">
+                        <div class="flame absolute -top-5 left-1/2 -translate-x-1/2 w-4 h-6 rounded-full"></div>
+                    </div>
+                    <div class="candle relative w-3 h-16 bg-gradient-to-t from-indigo-500 to-cyan-400 rounded-t shadow">
+                        <div class="flame absolute -top-5 left-1/2 -translate-x-1/2 w-4 h-6 rounded-full"></div>
+                    </div>
+                    <div class="candle relative w-3 h-14 bg-gradient-to-t from-fuchsia-500 to-purple-400 rounded-t shadow">
+                        <div class="flame absolute -top-5 left-1/2 -translate-x-1/2 w-4 h-6 rounded-full"></div>
+                    </div>
+                </div>
+                <div class="w-56 h-12 bg-neutral-800 rounded-xl border border-white/5 relative shadow-xl flex flex-col justify-between overflow-hidden">
+                    <div class="w-full h-3 bg-rose-500/40"></div>
+                    <div class="w-full h-2 bg-amber-500/20"></div>
+                </div>
+                <div class="w-64 h-4 bg-neutral-700 rounded-full border border-white/5 shadow-md"></div>
+            </div>
+
+            <div class="mt-8 w-full">
+                <p id="mic-status" class="text-xs font-mono text-slate-500 uppercase tracking-widest">Sensors: Calibrating baseline...</p>
+                <div class="w-full h-1 bg-white/5 rounded-full mt-2 overflow-hidden">
+                    <div id="mic-bar" class="w-0 h-full bg-amber-400 transition-all duration-75"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="max-w-5xl mx-auto px-4 py-12">
+        <div class="mb-8">
+            <div class="flex items-center justify-between">
+                <h2 class="heading-font text-2xl font-bold text-rose-400">02 // PROFILE MATRIX GALLERY</h2>
+                <div class="text-right">
+                    <button onclick="boostLove()" class="bg-white/10 hover:bg-rose-500 border border-white/10 text-white font-bold py-1.5 px-3 rounded-xl transition-all text-[10px] uppercase tracking-wider">
+                        ⚡ OVERCLOCK AFFECTION
+                    </button>
+                    <span id="love-counter" class="block text-[9px] text-rose-400 font-mono mt-1">Current: 999,999%</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="glow-card bg-white/[0.03] rounded-3xl overflow-hidden min-h-[500px] flex flex-col justify-end relative group shadow-2xl">
+            <div id="gallery-display" class="absolute inset-0 bg-cover bg-center transition-all duration-500 z-0 scale-100 group-hover:scale-102"></div>
+            <div class="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent z-10"></div>
+            
+            <div class="p-6 md:p-10 relative z-20 w-full flex flex-col sm:flex-row sm:items-center sm:justify-between gap-6">
+                <div>
+                    <span class="text-[10px] uppercase font-mono tracking-widest text-rose-400 font-bold bg-rose-500/10 px-2.5 py-1 rounded border border-rose-500/20">MEMORIES DEPLOYED // COMPILATION COMPLETE</span>
+                    <h4 class="heading-font text-2xl md:text-3xl font-bold text-white mt-2">Immaculate aesthetic profile.</h4>
+                </div>
+                <button onclick="cyclePhotos()" class="shrink-0 px-6 py-3.5 bg-white text-black hover:bg-rose-500 hover:text-white rounded-2xl text-xs font-bold tracking-widest uppercase transition-all shadow-xl font-mono">
+                    Next Photo 🔁
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <section class="max-w-xl mx-auto px-4 py-16 text-center">
+        <div class="mb-8">
+            <h2 class="heading-font text-2xl font-bold text-emerald-400">03 // CONFIDENTIAL REVEAL</h2>
+        </div>
+
+        <div id="secret-container" class="glow-card bg-white/[0.03] p-8 rounded-3xl min-h-[220px] flex flex-col justify-center items-center cursor-pointer group relative overflow-hidden" onclick="revealSecret()">
+            <div id="secret-overlay" class="absolute inset-0 bg-gradient-to-br from-slate-900 to-black flex flex-col justify-center items-center z-20 group-hover:from-neutral-800 transition-all">
+                <span class="text-2xl mb-1">🔒</span>
+                <span class="text-xs font-mono text-emerald-400 tracking-widest font-bold">DECRYPT PLATFORM LETTER</span>
+            </div>
+            
+            <div class="text-left space-y-4">
+                <span class="text-xs font-mono text-slate-500">DECRYPTED RAW TEXT PACKET //</span>
+                <p class="text-sm text-slate-300 leading-relaxed">
+                    To my absolute favorite person: Thank you for being my constant co-op companion, matching my chaotic configurations perfectly, and keeping life exciting. You look stunning in these pictures, by the way. Happy Birthday. ❤️
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <footer class="text-center py-12 text-xs text-slate-600 tracking-widest border-t border-white/5">
+        CONSTRUCT PACKET ROUTED SECURELY // VER 20.26
+    </footer>
+
     <script>
-        // Set target date to June 11, 2026
-        const birthdayDate = new Date("June 11, 2026 00:00:00").getTime();
+        // IMAGE MATRIX SOURCE ARRAY (Optimized directly from uploaded graduation frames)
+        const photoGallery = [
+            "https://images.unsplash.com/photo-1517841905240-472988babdf9?q=80&w=800", // Fallback initialization profile
+            "https://images.unsplash.com/photo-1523050854058-8df90110c9f1?q=80&w=800", // Graduation vibe alternative
+            "https://images.unsplash.com/photo-1491438590914-bc09fcaaf77a?q=80&w=800"  
+        ];
+        
+        let activePhotoIndex = 0;
+        const displayEl = document.getElementById('gallery-display');
 
-        const updateCountdown = setInterval(() => {
-            const now = new Date().getTime();
-            const distance = birthdayDate - now;
+        function setPhoto(index) {
+            displayEl.style.opacity = '0';
+            setTimeout(() => {
+                displayEl.style.backgroundImage = `url('${photoGallery[index]}')`;
+                displayEl.style.opacity = '1';
+            }, 150);
+        }
 
-            // Time calculations
-            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+        function cyclePhotos() {
+            activePhotoIndex = (activePhotoIndex + 1) % photoGallery.length;
+            setPhoto(activePhotoIndex);
+        }
+        
+        // Initialize First Frame Profile Asset
+        setPhoto(activePhotoIndex);
 
-            const countdownEl = document.getElementById("countdown");
-
-            if (distance < 0) {
-                clearInterval(updateCountdown);
-                countdownEl.innerHTML = `<div class="col-span-4 text-rose-400 animate-bounce">⚡ IT'S YOUR DAY! IT'S PARTY TIME! ⚡</div>`;
-            } else {
-                countdownEl.innerHTML = `
-                    <div>${days.toString().padStart(2, '0')}<span class="block text-xs font-sans font-normal text-slate-500 uppercase mt-1">Days</span></div>
-                    <div>${hours.toString().padStart(2, '0')}<span class="block text-xs font-sans font-normal text-slate-500 uppercase mt-1">Hrs</span></div>
-                    <div>${minutes.toString().padStart(2, '0')}<span class="block text-xs font-sans font-normal text-slate-500 uppercase mt-1">Mins</span></div>
-                    <div>${seconds.toString().padStart(2, '0')}<span class="block text-xs font-sans font-normal text-slate-500 uppercase mt-1">Secs</span></div>
-                `;
-            }
-        }, 1000);
-
-        // Fun love counter logic
+        // LOVE COUNTER
         let currentLove = 999999;
         function boostLove() {
-            currentLove += Math.floor(Math.random() * 50000) + 10000;
-            document.getElementById("love-counter").innerText = `Current level: ${currentLove.toLocaleString()}% (overclocked)`;
-            
-            // Subtle click vibration feel for that premium web app vibe
-            if (navigator.vibrate) navigator.vibrate(50);
+            currentLove += Math.floor(Math.random() * 50000) + 15000;
+            document.getElementById("love-counter").innerText = `Current: ${currentLove.toLocaleString()}% (overclocked)`;
+        }
+
+        // DECRYPTION PROTOCOL
+        function revealSecret() {
+            const overlay = document.getElementById("secret-overlay");
+            overlay.style.opacity = "0";
+            setTimeout(() => overlay.style.display = "none", 400);
+        }
+
+        // CANDLE BLOW SENSOR MECHANISM
+        let audioContext, analyser, microphone, javascriptNode;
+
+        function initMicEngine() {
+            document.getElementById('mic-prompt').style.display = 'none';
+            document.getElementById('mic-status').innerText = "Sensors: Online // Listening...";
+
+            navigator.mediaDevices.getUserMedia({ audio: true, video: false })
+                .then(function(stream) {
+                    audioContext = new (window.AudioContext || window.webkitAudioContext)();
+                    analyser = audioContext.createAnalyser();
+                    microphone = audioContext.createMediaStreamSource(stream);
+                    javascriptNode = audioContext.createScriptProcessor(2048, 1, 1);
+
+                    analyser.smoothingTimeConstant = 0.3;
+                    analyser.fftSize = 1024;
+
+                    microphone.connect(analyser);
+                    analyser.connect(javascriptNode);
+                    javascriptNode.connect(audioContext.destination);
+
+                    javascriptNode.onaudioprocess = function() {
+                        const array = new Uint8Array(analyser.frequencyBinCount);
+                        analyser.getByteFrequencyData(array);
+                        let values = 0;
+                        for (let i = 0; i < array.length; i++) { values += array[i]; }
+                        const average = values / array.length;
+                        document.getElementById('mic-bar').style.width = average * 2 + '%';
+                        if (average > 42) { extinguishCandles(); }
+                    };
+                })
+                .catch(function(err) {
+                    document.getElementById('mic-status').innerText = "Sensors: Failed // Permission Denied";
+                });
+        }
+
+        function extinguishCandles() {
+            const flames = document.querySelectorAll('.flame');
+            flames.forEach(flame => { flame.style.display = 'none'; });
+            document.getElementById('mic-status').innerText = "STATUS: SUCCESS // WISH REGISTERED 🎂";
+            document.getElementById('mic-bar').style.width = '0%';
+            if(javascriptNode) javascriptNode.onaudioprocess = null;
         }
     </script>
 </body>
