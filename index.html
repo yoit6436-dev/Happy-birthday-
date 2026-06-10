@@ -3,252 +3,645 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>HBD TO MY FAVORITE HUMAN ✨</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Syne:wght@700;800&display=swap" rel="stylesheet">
-    
+    <title>Our Eternal Universe - Happy 28th Birthday ❤️</title>
     <style>
+        :root {
+            --primary: #ff6b81;
+            --primary-hover: #ff4757;
+            --secondary: #6c5ce7;
+            --accent: #fdcb6e;
+            --success: #2ecc71;
+            --dark-text: #2d3436;
+            --bg-gradient: linear-gradient(135deg, #fff3f5 0%, #ffd2dc 100%);
+            --card-shadow: 0 25px 55px rgba(255, 107, 129, 0.3);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+        }
+
         body {
-            font-family: 'Plus Jakarta Sans', sans-serif;
-            background-color: #060609;
+            background: var(--bg-gradient);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow-x: hidden;
+            overflow-y: auto;
+            position: relative;
+            padding: 40px 0;
         }
-        .heading-font {
-            font-family: 'Syne', sans-serif;
+
+        /* Ambient Dynamic Particles Layer */
+        .bg-decorations {
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            pointer-events: none; z-index: 1;
         }
-        .glow-card {
-            border: 1px solid rgba(255, 255, 255, 0.04);
+
+        .floating-heart {
+            position: absolute;
+            color: rgba(255, 107, 129, 0.2);
+            animation: floatUpMaster 10s linear infinite;
+            bottom: -60px;
+        }
+
+        @keyframes floatUpMaster {
+            0% { transform: translateY(0) rotate(0deg) scale(0.7); opacity: 0; }
+            10% { opacity: 1; }
+            90% { opacity: 1; }
+            100% { transform: translateY(-115vh) rotate(360deg) scale(1.3); opacity: 0; }
+        }
+
+        /* Floating Audio Controller Controller Widget */
+        .audio-widget {
+            position: fixed;
+            top: 20px; right: 20px;
+            background: rgba(255, 255, 255, 0.94);
+            padding: 12px 24px; border-radius: 35px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+            display: flex; align-items: center; gap: 12px;
+            z-index: 100; cursor: pointer;
+            border: 2px solid rgba(255, 107, 129, 0.4);
+            font-size: 0.95rem; font-weight: 700; color: var(--dark-text);
+            transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+        .audio-widget:hover { transform: scale(1.05) translateY(-2px); background: white; }
+        .music-pulse { animation: pulseAnim 1.2s infinite; }
+
+        /* Grand Framework Structural Screen Hierarchy */
+        .screen {
+            position: relative;
+            width: 92%; max-width: 500px;
+            min-height: 90vh;
+            background: rgba(255, 255, 255, 0.94);
             backdrop-filter: blur(20px);
-            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+            border-radius: 45px;
+            box-shadow: var(--card-shadow);
+            padding: 45px 35px;
+            display: none;
+            flex-direction: column; align-items: center; justify-content: center;
+            text-align: center; z-index: 10;
+            border: 4px solid rgba(255, 255, 255, 0.85);
+            margin: 20px auto;
         }
-        .glow-card:hover {
-            transform: translateY(-4px);
-            border-color: rgba(244, 63, 94, 0.25);
-            box-shadow: 0 30px 60px -20px rgba(244, 63, 94, 0.12);
+
+        .screen.active {
+            display: flex;
+            animation: slideIntoViewMaster 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
         }
-        html {
-            scroll-behavior: smooth;
+
+        @keyframes slideIntoViewMaster {
+            from { opacity: 0; transform: scale(0.88) translateY(50px); }
+            to { opacity: 1; transform: scale(1) translateY(0); }
         }
-        .flame {
-            background: radial-gradient(circle at bottom, #ff9f43 0%, #ff5252 70%, transparent 100%);
-            box-shadow: 0 0 10px #ff9f43, 0 0 20px #ff5252;
-            animation: flicker 0.6s infinite alternate;
+
+        /* Global Structural Typography */
+        h1 { color: #d63031; font-size: 2.2rem; margin-bottom: 12px; font-weight: 800; line-height: 1.25; }
+        .subtitle { color: #7f8c8d; font-size: 0.95rem; margin-bottom: 25px; text-transform: uppercase; letter-spacing: 1.5px; font-weight: 700; }
+        p { color: #4f4f4f; font-size: 1.08rem; line-height: 1.7; margin-bottom: 25px; }
+
+        .btn {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-hover) 100%);
+            color: white; border: none; padding: 16px 45px;
+            font-size: 1.15rem; font-weight: 700; border-radius: 50px;
+            cursor: pointer; box-shadow: 0 8px 25px rgba(255, 107, 129, 0.45);
+            transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            margin-top: 15px; display: inline-flex; align-items: center; gap: 12px;
         }
-        @keyframes flicker {
-            0% { transform: scaleX(1) scaleY(1) rotate(-1deg); }
-            100% { transform: scaleX(0.9) scaleY(1.1) rotate(1deg); }
-        }
-        #gallery-display {
-            transition: opacity 0.4s ease-in-out;
-        }
+        .btn:hover { transform: translateY(-4px) scale(1.03); box-shadow: 0 12px 30px rgba(255, 107, 129, 0.6); }
+
+        /* STAGE 1: Real-time Dynamic Analytical Live Love Ticker */
+        .heart-icon-pulse { font-size: 80px; color: var(--primary); animation: pulseAnim 1.4s infinite; margin-bottom: 20px; }
+        @keyframes pulseAnim { 0% { transform: scale(1); } 50% { transform: scale(1.15); } 100% { transform: scale(1); } }
+        
+        .counter-container { width: 100%; background: #fff5f6; border-radius: 28px; padding: 22px 15px; margin: 20px 0; border: 2px dashed var(--primary); }
+        .counter-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; margin-top: 15px; }
+        .counter-block { background: white; padding: 14px 5px; border-radius: 18px; box-shadow: 0 6px 15px rgba(0,0,0,0.03); }
+        .counter-val { font-size: 1.5rem; font-weight: 800; color: var(--primary-hover); }
+        .counter-lbl { font-size: 0.75rem; color: #888; text-transform: uppercase; font-weight: 700; margin-top: 4px; }
+
+        /* STAGE 2: Interactive Accordion Story Chapters */
+        .timeline-box { width: 100%; max-height: 380px; overflow-y: auto; padding-right: 5px; margin-bottom: 25px; text-align: left; }
+        .timeline-node { position: relative; padding-left: 35px; padding-bottom: 25px; border-left: 3px solid #ffe3e7; }
+        .timeline-node::before { content: '❤️'; position: absolute; left: -11px; top: 0; background: white; font-size: 14px; border-radius: 50%; }
+        .timeline-node.active-node { border-left-color: var(--primary); }
+        .timeline-date { font-size: 0.85rem; font-weight: 700; color: var(--primary-hover); margin-bottom: 4px; }
+        .timeline-title { font-size: 1.15rem; font-weight: 700; color: var(--dark-text); margin-bottom: 6px; }
+        .timeline-desc { font-size: 0.98rem; color: #555; line-height: 1.55; }
+
+        /* STAGE 3: Custom Pop-open Letter Box Component */
+        .envelope-container { perspective: 1000px; width: 100%; height: 280px; display: flex; justify-content: center; align-items: center; margin-bottom: 20px; }
+        .envelope { position: relative; width: 320px; height: 195px; background: #fdfaf4; box-shadow: 0 12px 35px rgba(0,0,0,0.1); border-radius: 0 0 15px 15px; transition: transform 0.8s; transform-style: preserve-3d; border: 1px solid #f3ece0; }
+        .envelope::before { content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-color: #fff1f3; background-image: radial-gradient(#ffb6c1 20%, transparent 20%), radial-gradient(#ffb6c1 20%, transparent 20%); background-size: 16px 16px; background-position: 0 0, 8px 8px; opacity: 0.15; border-radius: 0 0 15px 15px; }
+        .envelope-flap { position: absolute; top: 0; left: 0; width: 0; height: 0; border-left: 160px solid transparent; border-right: 160px solid transparent; border-top: 115px solid #f5ebd7; transform-origin: top; transition: transform 0.4s ease 0.4s; z-index: 3; }
+        .envelope.open .envelope-flap { transform: rotateX(180deg); transition: transform 0.4s ease; z-index: 1; }
+        .heart-seal { position: absolute; top: 92px; left: 144px; width: 32px; height: 32px; background: #ff4757; transform: rotate(-45deg); z-index: 4; cursor: pointer; box-shadow: 0 4px 12px rgba(0,0,0,0.15); }
+        .heart-seal::before, .heart-seal::after { content: ''; position: absolute; width: 32px; height: 32px; background: #ff4757; border-radius: 50%; }
+        .heart-seal::before { top: -16px; left: 0; } .heart-seal::after { left: 16px; top: 0; }
+        .envelope.open .heart-seal { opacity: 0; transform: scale(0); pointer-events: none; }
+        .letter { position: absolute; bottom: 5px; left: 15px; width: 290px; height: 175px; background: #fff; border-radius: 10px; padding: 20px; box-sizing: border-box; transition: all 0.6s ease 0.3s; z-index: 2; display: flex; flex-direction: column; justify-content: center; align-items: center; }
+        .envelope.open .letter { transform: translateY(-125px) rotate(-2deg); height: 245px; z-index: 5; box-shadow: 0 15px 35px rgba(0,0,0,0.18); border: 1px solid #ffe3e7; }
+        .letter-text { font-size: 0.98rem; color: #333; font-style: italic; opacity: 0; transition: opacity 0.4s ease 0.8s; text-align: center; line-height: 1.65; }
+        .envelope.open .letter-text { opacity: 1; }
+        .letter-text strong { color: var(--primary-hover); display: block; font-size: 1.15rem; margin-bottom: 8px; font-style: normal; }
+
+        /* STAGE 4: Cinematic Video Presentation Player Theater */
+        .video-theater { width: 100%; background: #000; border-radius: 24px; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.3); position: relative; padding-bottom: 56.25%; height: 0; margin: 20px 0; }
+        .video-theater video { position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; border: none; }
+
+        /* STAGE 5: 3D Photo Discard Frame Stack Gallery */
+        .gallery-container { position: relative; width: 300px; height: 380px; perspective: 1000px; margin: 15px auto 25px auto; cursor: pointer; }
+        .gallery-card { position: absolute; width: 100%; height: 100%; transform-style: preserve-3d; transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.6s; box-shadow: 0 15px 35px rgba(0,0,0,0.15); border-radius: 22px; background: white; border: 12px solid white; }
+        .gallery-card img { width: 100%; height: 100%; object-fit: cover; border-radius: 14px; }
+
+        /* STAGE 6: Love Scratch-Card Canvas Box Overlay */
+        .scratch-wrapper { position: relative; width: 280px; height: 280px; margin: 20px auto; background: #fff5f6; border-radius: 24px; box-shadow: inset 0 4px 10px rgba(0,0,0,0.05); border: 3px dashed var(--primary); display: flex; align-items: center; justify-content: center; overflow: hidden; }
+        .scratch-secret-content { padding: 25px; font-size: 1.1rem; color: #d63031; font-weight: 700; line-height: 1.6; }
+        .scratch-canvas { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border-radius: 20px; cursor: crosshair; touch-action: none; }
+
+        /* STAGE 7: Relationship Trivia Arcade Challenge Space */
+        .quiz-container { width: 100%; text-align: left; background: white; border-radius: 24px; padding: 25px; box-shadow: 0 8px 20px rgba(0,0,0,0.03); margin: 15px 0; }
+        .quiz-option { background: #f8f9fa; border: 2px solid #e9ecef; border-radius: 15px; padding: 14px 18px; margin: 12px 0; cursor: pointer; transition: all 0.25s; font-size: 1rem; font-weight: 600; }
+        .quiz-option:hover { background: #fff0f2; border-color: var(--primary); color: var(--primary-hover); }
+        .quiz-progress { font-size: 0.85rem; font-weight: 700; color: #a4b0be; text-transform: uppercase; margin-bottom: 5px; }
+        .quiz-feedback { font-weight: 700; text-align: center; min-height: 30px; margin-top: 15px; font-size: 1.05rem; }
+
+        /* STAGE 8: Balloon Popping Interactive Space Engine Matrix */
+        .balloon-game-box { position: relative; width: 100%; height: 300px; background: #fffdf9; border-radius: 25px; overflow: hidden; border: 2px inset #f1ecdf; margin: 15px 0; }
+        .balloon { position: absolute; width: 52px; height: 64px; border-radius: 50% 50% 50% 50% / 40% 40% 60% 60%; cursor: pointer; animation: riseUpMaster 5.5s linear infinite; bottom: -70px; }
+        .balloon::after { content: ''; position: absolute; bottom: -8px; left: 25px; width: 2px; height: 12px; background: rgba(0,0,0,0.15); }
+        @keyframes riseUpMaster { 0% { bottom: -70px; transform: translateX(0); } 50% { transform: translateX(20px) rotate(6deg); } 100% { bottom: 330px; transform: translateX(-15px) rotate(-6deg); } }
+        .score-board { font-size: 1.05rem; font-weight: 700; color: #4f4f4f; margin-bottom: 10px; }
+
+        /* STAGE 9: Dual-Input Digital Candle Blow Mechanism Box */
+        .cake-container { position: relative; width: 220px; height: 220px; margin: 25px auto; }
+        .cake { position: absolute; bottom: 0; width: 100%; height: 100px; background: #f3a683; border-radius: 25px 25px 12px 12px; box-shadow: 0 8px 0 #e77f51; }
+        .cake::before { content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 28px; background: #f7d794; border-radius: 25px; }
+        .cream-drip { position: absolute; top: 22px; left: 20px; width: 22px; height: 22px; background: #f7d794; border-radius: 50%; box-shadow: 40px -4px 0 #f7d794, 85px 4px 0 #f7d794, 130px -2px 0 #f7d794, 160px 2px 0 #f7d794; }
+        .candle { position: absolute; bottom: 100px; left: 50%; transform: translateX(-50%); width: 16px; height: 50px; background: linear-gradient(to right, #78e08f, #91e6a1); border-radius: 5px 5px 0 0; }
+        .flame { position: absolute; top: -22px; left: 50%; transform: translateX(-50%); width: 14px; height: 26px; background: #ff9f43; border-radius: 50% 50% 20% 20%; box-shadow: 0 0 15px #ff9f43, 0 0 25px #ff9f43; animation: flickerMaster 0.5s infinite alternate; transform-origin: bottom center; cursor: pointer; }
+        @keyframes flickerMaster { 0% { transform: translateX(-50%) scale(1) rotate(-1deg); } 100% { transform: translateX(-50%) scale(1.15) rotate(2deg); background: #ffff3b; } }
+        .flame.extinguished { display: none !important; }
+        .mic-status { font-weight: 700; color: var(--primary); margin-top: 12px; font-size: 0.98rem; }
+
+        /* STAGE 10: Grand Particle Fireworks Finale Presentation Layer */
+        #canvas-fireworks { position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; pointer-events: none; z-index: 2; display: none; }
+        .wishes-box h2 { color: #d32f2f; font-size: 2.1rem; margin-bottom: 15px; animation: scaleUpDownMaster 1.8s infinite alternate; font-weight: 800; }
+        @keyframes scaleUpDownMaster { from { transform: scale(0.95); } to { transform: scale(1.05); } }
+        .timeline-badge { background: #fff0f2; border: 2px dashed var(--primary); padding: 14px 22px; border-radius: 16px; margin-top: 20px; font-size: 1.02rem; color: #555; font-weight: 700; }
     </style>
 </head>
-<body class="text-slate-100 selection:bg-rose-500 selection:text-white antialiased overflow-x-hidden">
+<body>
 
-    <section class="min-h-screen flex flex-col justify-center items-center px-4 relative overflow-hidden">
-        <div class="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(244,63,94,0.15),transparent_60%)]"></div>
+    <div class="audio-widget" onclick="toggleMusic()">
+        <span id="music-icon" class="music-pulse">🎵</span>
+        <span id="music-text">Play Voice Note</span>
+    </div>
+    <audio id="bg-music" src="Record_2026-06-10-23-36-24.mp4" loop></audio>
+
+    <div class="bg-decorations" id="bg-decorations"></div>
+    <canvas id="canvas-fireworks"></canvas>
+
+    <div class="screen active" id="screen-welcome">
+        <div class="heart-icon-pulse">❤️</div>
+        <h1>Happy 28th Birthday, My Universe!</h1>
+        <div class="subtitle">An Infinite Celebration Layout</div>
+        <p>Welcome to your central digital birthday arena. Walk through the customized gateways below to unlock our shared history timeline chapters.</p>
         
-        <div class="text-center space-y-6 relative z-10 max-w-4xl">
-            <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-rose-500/10 text-rose-400 text-xs font-semibold tracking-widest uppercase border border-rose-500/20 animate-pulse">
-                <span>⚡ CORE SIMULATION RUNNING // VER 20.26 ⚡</span>
-            </div>
-            <h1 class="heading-font text-5xl md:text-9xl font-extrabold tracking-tight bg-gradient-to-r from-rose-400 via-fuchsia-500 to-indigo-400 bg-clip-text text-transparent leading-none">
-                HAPPY BDAY,<br>MAIN CHARACTER.
-            </h1>
-            <p class="text-slate-400 max-w-md mx-auto text-sm md:text-base font-medium">
-                Welcome to your digital shrine. Scroll down to claim your interface.
-            </p>
-            <div class="pt-8">
-                <a href="#cake-game" class="animate-bounce inline-flex items-center justify-center w-12 h-12 rounded-full border border-white/10 bg-white/5 hover:bg-white/10 transition-colors">
-                    👇
-                </a>
+        <div class="counter-container">
+            <span style="font-size:0.95rem; font-weight:700; color:#5c6b73;">Seconds ticking in eternal alignment:</span>
+            <div class="counter-grid">
+                <div class="counter-block"><div class="counter-val" id="days-val">00</div><div class="counter-lbl">Days</div></div>
+                <div class="counter-block"><div class="counter-val" id="hours-val">00</div><div class="counter-lbl">Hrs</div></div>
+                <div class="counter-block"><div class="counter-val" id="mins-val">00</div><div class="counter-lbl">Mins</div></div>
+                <div class="counter-block"><div class="counter-val" id="secs-val">00</div><div class="counter-lbl">Secs</div></div>
             </div>
         </div>
-    </section>
+        <button class="btn" onclick="nextScreen('welcome', 'timeline')">Walk Down Our Timeline 🚶‍♂️</button>
+    </div>
 
-    <section id="cake-game" class="max-w-xl mx-auto px-4 py-16 text-center scroll-mt-6">
-        <div class="mb-8">
-            <div class="inline-flex items-center gap-2 px-2.5 py-0.5 rounded-full bg-amber-500/10 text-amber-400 text-[10px] font-mono border border-amber-500/20 uppercase mb-3">
-                Interactive Module // Mic Access
+    <div class="screen" id="screen-timeline">
+        <h1>Chronological Milestones</h1>
+        <div class="subtitle">Our Unfolding Journey Records</div>
+        
+        <div class="timeline-box">
+            <div class="timeline-node active-node">
+                <div class="timeline-date">JUNE 2025</div>
+                <div class="timeline-title">The Initial Connection Spark ✨</div>
+                <div class="timeline-desc">The turning point of our alignment. A single shared conversation transformed our whole universe landscape.</div>
             </div>
-            <h2 class="heading-font text-2xl font-bold text-amber-400">01 // BLOW OUT THE CANDLES</h2>
-            <p class="text-sm text-slate-400 mt-1">Enable mic access, then blow heavily into your microphone input to extinguish the sparks.</p>
+            <div class="timeline-node active-node">
+                <div class="timeline-date">18/06/2025</div>
+                <div class="timeline-title">The Official Committal 🗓️</div>
+                <div class="timeline-desc">Our ultimate chronological anchor. The beautiful morning we vowed to trace all upcoming paths side by side.</div>
+            </div>
+            <div class="timeline-node">
+                <div class="timeline-date">LATE 2025</div>
+                <div class="timeline-title">Deepening Foundations 🌲</div>
+                <div class="timeline-desc">Fusing dreams, laughter, shared hurdles, and deep structural mutual devotion.</div>
+            </div>
+            <div class="timeline-node">
+                <div class="timeline-date">11/06/2026 (TODAY)</div>
+                <div class="timeline-title">The Grand 28th Chapter Arrival 🎂</div>
+                <div class="timeline-desc">The beautiful present moment. Celebrating the gorgeous soul you are, standing proudly at your side.</div>
+            </div>
         </div>
+        <button class="btn" onclick="nextScreen('timeline', 'letter')">Access Letter Registry ✉️</button>
+    </div>
 
-        <div class="glow-card bg-white/[0.02] p-8 rounded-3xl flex flex-col items-center justify-center min-h-[320px] relative overflow-hidden">
-            <div id="mic-prompt" class="absolute inset-0 bg-neutral-950/90 z-20 flex flex-col justify-center items-center p-6 text-center">
-                <span class="text-4xl mb-3">🎂</span>
-                <p class="text-sm font-semibold text-slate-200 max-w-xs mb-4">The cake engine requires microphone verification to calculate breath velocity diagnostics.</p>
-                <button onclick="initMicEngine()" class="px-5 py-2.5 bg-amber-400 text-black font-bold text-xs rounded-xl shadow-lg hover:opacity-90 transition-opacity uppercase tracking-wider">
-                    Activate Breath Sensors
-                </button>
-            </div>
-
-            <div class="w-full flex flex-col items-center justify-center space-y-1 mt-6">
-                <div class="flex justify-center items-end gap-4 h-20 px-4">
-                    <div class="candle relative w-3 h-14 bg-gradient-to-t from-rose-500 to-pink-400 rounded-t shadow">
-                        <div class="flame absolute -top-5 left-1/2 -translate-x-1/2 w-4 h-6 rounded-full"></div>
+    <div class="screen" id="screen-letter">
+        <h1>Letter From My Inner Core</h1>
+        <div class="subtitle">Authentic Vows</div>
+        <p>Tap firmly onto the crimson watercolor heart stamp profile below to release the hidden parchment layer.</p>
+        
+        <div class="envelope-container" onclick="openEnvelope()">
+            <div class="envelope" id="envelope">
+                <div class="envelope-flap"></div>
+                <div class="heart-seal"></div>
+                <div class="letter">
+                    <div class="letter-text">
+                        <strong>Happy 28th Birthday, My Love! 🎂</strong>
+                        Last year, I didn't even know it was your birthday. But everything changed when on <strong>18/06/2025</strong> we started dating. It has been such an incredible journey. Love you always!
                     </div>
-                    <div class="candle relative w-3 h-16 bg-gradient-to-t from-indigo-500 to-cyan-400 rounded-t shadow">
-                        <div class="flame absolute -top-5 left-1/2 -translate-x-1/2 w-4 h-6 rounded-full"></div>
-                    </div>
-                    <div class="candle relative w-3 h-14 bg-gradient-to-t from-fuchsia-500 to-purple-400 rounded-t shadow">
-                        <div class="flame absolute -top-5 left-1/2 -translate-x-1/2 w-4 h-6 rounded-full"></div>
-                    </div>
-                </div>
-                <div class="w-56 h-12 bg-neutral-800 rounded-xl border border-white/5 relative shadow-xl flex flex-col justify-between overflow-hidden">
-                    <div class="w-full h-3 bg-rose-500/40"></div>
-                    <div class="w-full h-2 bg-amber-500/20"></div>
-                </div>
-                <div class="w-64 h-4 bg-neutral-700 rounded-full border border-white/5 shadow-md"></div>
-            </div>
-
-            <div class="mt-8 w-full">
-                <p id="mic-status" class="text-xs font-mono text-slate-500 uppercase tracking-widest">Sensors: Calibrating baseline...</p>
-                <div class="w-full h-1 bg-white/5 rounded-full mt-2 overflow-hidden">
-                    <div id="mic-bar" class="w-0 h-full bg-amber-400 transition-all duration-75"></div>
                 </div>
             </div>
         </div>
-    </section>
+        <button class="btn" id="btn-to-theater" style="display: none;" onclick="nextScreen('letter', 'theater')">Enter My Cinema Theater 🎬</button>
+    </div>
 
-    <section class="max-w-5xl mx-auto px-4 py-12">
-        <div class="mb-8">
-            <div class="flex items-center justify-between">
-                <h2 class="heading-font text-2xl font-bold text-rose-400">02 // PROFILE MATRIX GALLERY</h2>
-                <div class="text-right">
-                    <button onclick="boostLove()" class="bg-white/10 hover:bg-rose-500 border border-white/10 text-white font-bold py-1.5 px-3 rounded-xl transition-all text-[10px] uppercase tracking-wider">
-                        ⚡ OVERCLOCK AFFECTION
-                    </button>
-                    <span id="love-counter" class="block text-[9px] text-rose-400 font-mono mt-1">Current: 999,999%</span>
+    <div class="screen" id="screen-theater">
+        <h1>Your Romantic Cinema Stage</h1>
+        <div class="subtitle">Private Screening Room</div>
+        <p>Sit back, trigger your screen lights down, and look closely at this dedicated video present loop:</p>
+        
+        <div class="video-theater">
+            <video src="Klickpin.com- Salty shoreline dreams with ideas people actually use for daily inspiration for endless summer vibes-pin-id-1007047166669298030.mp4" controls loop playsinline></video>
+        </div>
+        <button class="btn" onclick="nextScreen('theater', 'gallery')">Open Frame Photo Gallery 📸</button>
+    </div>
+
+    <div class="screen" id="screen-gallery">
+        <h1>Snapshots of Bliss Gallery</h1>
+        <div class="subtitle">The Graphical Archive Stack</div>
+        <p>Repeatedly click/tap onto the portrait picture stack deck frame below to flip and cycle through memory snapshots.</p>
+        
+        <div class="gallery-container" onclick="flipPhoto()">
+            <div class="gallery-card" id="pic3" style="z-index: 13;"><img src="IMG_20260610_182840.jpg" alt="Memory Segment 3"></div>
+            <div class="gallery-card" id="pic2" style="z-index: 12;"><img src="IMG_20260610_182759.jpg" alt="Memory Segment 2"></div>
+            <div class="gallery-card" id="pic1" style="z-index: 11;"><img src="IMG_20260610_182733.jpg" alt="Memory Segment 1"></div>
+        </div>
+        <button class="btn" id="btn-to-scratch" style="visibility: hidden;" onclick="nextScreen('gallery', 'scratch')">Unlock Scratch-Card Game 🎰</button>
+    </div>
+
+    <div class="screen" id="screen-scratch">
+        <h1>The Lucky Love Scratch-Card</h1>
+        <div class="subtitle">Scratch & Reveal Your Prize</div>
+        <p>Use your touch finger or mouse tracking device to rub away the silver metallic protective foil layer and read your hidden prize code line below:</p>
+        
+        <div class="scratch-wrapper">
+            <div class="scratch-secret-content">
+                🎁 <b>PRIZE UNLOCKED:</b><br>
+                One infinite romantic dinner evening date, 1000 premium hugs, and your favorite treats on demand! ❤️
+            </div>
+            <canvas class="scratch-canvas" id="scratchCanvas"></canvas>
+        </div>
+        <button class="btn" id="btn-to-quiz" style="display: none;" onclick="nextScreen('scratch', 'quiz')">Enter Quiz Arcade 🧩</button>
+    </div>
+
+    <div class="screen" id="screen-quiz">
+        <h1>Relationship Trivia Arcade</h1>
+        <div class="subtitle">Chronological Alignment Check</div>
+        
+        <div class="quiz-container">
+            <div class="quiz-progress" id="quiz-progress">Question 1 of 2</div>
+            <h3 id="quiz-question" style="font-size:1.15rem; margin-bottom:12px; color:#c0392b;">What date did our incredible relationship journey officially begin?</h3>
+            <div id="quiz-options-box">
                 </div>
-            </div>
         </div>
+        <div class="quiz-feedback" id="quiz-feedback"></div>
+        <button class="btn" id="btn-to-balloons" style="display: none;" onclick="nextScreen('quiz', 'balloons')">Unlock Balloon Stage! 🎈</button>
+    </div>
 
-        <div class="glow-card bg-white/[0.03] rounded-3xl overflow-hidden min-h-[500px] flex flex-col justify-end relative group shadow-2xl">
-            <div id="gallery-display" class="absolute inset-0 bg-cover bg-center transition-all duration-500 z-0 scale-100 group-hover:scale-102"></div>
-            <div class="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent z-10"></div>
-            
-            <div class="p-6 md:p-10 relative z-20 w-full flex flex-col sm:flex-row sm:items-center sm:justify-between gap-6">
-                <div>
-                    <span class="text-[10px] uppercase font-mono tracking-widest text-rose-400 font-bold bg-rose-500/10 px-2.5 py-1 rounded border border-rose-500/20">MEMORIES DEPLOYED // COMPILATION COMPLETE</span>
-                    <h4 class="heading-font text-2xl md:text-3xl font-bold text-white mt-2">Immaculate aesthetic profile.</h4>
-                </div>
-                <button onclick="cyclePhotos()" class="shrink-0 px-6 py-3.5 bg-white text-black hover:bg-rose-500 hover:text-white rounded-2xl text-xs font-bold tracking-widest uppercase transition-all shadow-xl font-mono">
-                    Next Photo 🔁
-                </button>
-            </div>
+    <div class="screen" id="screen-balloons">
+        <h1>Pop-A-Message Target Therapy</h1>
+        <div class="subtitle">Unleash Rising Affections</div>
+        <p>Click/pop at least 4 custom floating birthday balloons scaling up the screen to parse hidden romantic notifications.</p>
+        <div class="score-board">Affections Dispatched: <span id="pop-count" style="color:var(--primary-hover); font-size:1.4rem;">0</span> / 4</div>
+        <div class="balloon-game-box" id="balloon-box"></div>
+        <button class="btn" id="btn-to-cake" style="display: none;" onclick="nextScreen('balloons', 'cake')">Proceed to Candle Board 🎂</button>
+    </div>
+
+    <div class="screen" id="screen-cake">
+        <h1>Formulate Your Ultimate Wish</h1>
+        <div class="subtitle">The Candle Ritual Stage</div>
+        <p id="cake-instruction">Provide microphone hardware stream allowance and **blow firmly directly into your microphone profile**, or tap the flame vectors directly to extinguish!</p>
+        
+        <div class="cake-container">
+            <div class="candle"><div class="flame" id="cake-flame" onclick="extinguishCandle()"></div></div>
+            <div class="cake"><div class="cream-drip"></div></div>
         </div>
-    </section>
+        <div class="mic-status" id="mic-status">Awaiting mic verification...</div>
+        <button class="btn" id="btn-to-finale" style="display: none;" onclick="nextScreen('cake', 'finale')">Render My Vows 🎉</button>
+    </div>
 
-    <section class="max-w-xl mx-auto px-4 py-16 text-center">
-        <div class="mb-8">
-            <h2 class="heading-font text-2xl font-bold text-emerald-400">03 // CONFIDENTIAL REVEAL</h2>
+    <div class="screen" id="screen-finale">
+        <div class="wishes-box">
+            <h2>Happy Birthday, Beautiful! ❤️</h2>
+            <p>Today, <b>11/06/2026</b>, registers the beautiful celebration of the absolute most brilliant, gorgeous, and perfect partner turning 28.</p>
+            <p>Thank you for changing my everyday timeline into a breathtaking romance book chapter. May your steps ahead run flush with infinite peace, smile lines, and happiness.</p>
+            <div class="timeline-badge">💞 Journey Established: 18/06/2025</div>
         </div>
-
-        <div id="secret-container" class="glow-card bg-white/[0.03] p-8 rounded-3xl min-h-[220px] flex flex-col justify-center items-center cursor-pointer group relative overflow-hidden" onclick="revealSecret()">
-            <div id="secret-overlay" class="absolute inset-0 bg-gradient-to-br from-slate-900 to-black flex flex-col justify-center items-center z-20 group-hover:from-neutral-800 transition-all">
-                <span class="text-2xl mb-1">🔒</span>
-                <span class="text-xs font-mono text-emerald-400 tracking-widest font-bold">DECRYPT PLATFORM LETTER</span>
-            </div>
-            
-            <div class="text-left space-y-4">
-                <span class="text-xs font-mono text-slate-500">DECRYPTED RAW TEXT PACKET //</span>
-                <p class="text-sm text-slate-300 leading-relaxed">
-                    To my absolute favorite person: Thank you for being my constant co-op companion, matching my chaotic configurations perfectly, and keeping life exciting. You look stunning in these pictures, by the way. Happy Birthday. ❤️
-                </p>
-            </div>
-        </div>
-    </section>
-
-    <footer class="text-center py-12 text-xs text-slate-600 tracking-widest border-t border-white/5">
-        CONSTRUCT PACKET ROUTED SECURELY // VER 20.26
-    </footer>
+        <button class="btn" onclick="restartJourneyMaster()">Replay Our Whole Story 🔄</button>
+    </div>
 
     <script>
-        // IMAGE MATRIX SOURCE ARRAY (Optimized directly from uploaded graduation frames)
-        const photoGallery = [
-            "https://images.unsplash.com/photo-1517841905240-472988babdf9?q=80&w=800", // Fallback initialization profile
-            "https://images.unsplash.com/photo-1523050854058-8df90110c9f1?q=80&w=800", // Graduation vibe alternative
-            "https://images.unsplash.com/photo-1491438590914-bc09fcaaf77a?q=80&w=800"  
+        // Matrix Canvas Ambient Particles Engine
+        function initBackgroundHearts() {
+            const container = document.getElementById('bg-decorations');
+            const icons = ['❤️', '💖', '✨', '🌸', '💕', '🎈', '⭐️'];
+            for (let i = 0; i < 24; i++) {
+                const heart = document.createElement('div');
+                heart.className = 'floating-heart';
+                heart.innerText = icons[Math.floor(Math.random() * icons.length)];
+                heart.style.left = Math.random() * 100 + 'vw';
+                heart.style.animationDelay = Math.random() * 8 + 's';
+                heart.style.fontSize = Math.random() * 24 + 16 + 'px';
+                container.appendChild(heart);
+            }
+        }
+        initBackgroundHearts();
+
+        // Audio Soundtrack Interface Controls
+        function toggleMusic() {
+            const music = document.getElementById('bg-music');
+            const icon = document.getElementById('music-icon');
+            const text = document.getElementById('music-text');
+            if (music.paused) {
+                music.play().catch(e => console.log("Deferred playback browser lock bypassed: ", e));
+                icon.classList.add('music-pulse'); text.innerText = "Mute Soundtrack";
+            } else {
+                music.pause(); icon.classList.remove('music-pulse'); text.innerText = "Play Soundtrack";
+            }
+        }
+
+        // Live Anniversary Dynamic Counter 
+        function updateAnniversaryCounter() {
+            const startDate = new Date('2025-06-18T00:00:00');
+            const now = new Date(); const diff = now - startDate;
+            const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
+            const minutes = Math.floor((diff / 1000 / 60) % 60);
+            const seconds = Math.floor((diff / 1000) % 60);
+            document.getElementById('days-val').innerText = days < 10 ? '0' + days : days;
+            document.getElementById('hours-val').innerText = hours < 10 ? '0' + hours : hours;
+            document.getElementById('mins-val').innerText = minutes < 10 ? '0' + minutes : minutes;
+            document.getElementById('secs-val').innerText = seconds < 10 ? '0' + seconds : seconds;
+        }
+        setInterval(updateAnniversaryCounter, 1000); updateAnniversaryCounter();
+
+        // Screen State Pipeline Routers
+        function nextScreen(current, next) {
+            document.getElementById(`screen-${current}`).classList.remove('active');
+            document.getElementById(`screen-${next}`).classList.add('active');
+            if (next === 'scratch') { initScratchCard(); }
+            if (next === 'quiz') { renderQuizQuestion(); }
+            if (next === 'balloons') { spawnBalloonsInBox(); }
+            if (next === 'cake') { setupMicrophone(); }
+            if (next === 'finale') { startFireworks(); }
+        }
+
+        // Stage 3: Letter Box Reveals
+        function openEnvelope() {
+            const env = document.getElementById('envelope');
+            if(!env.classList.contains('open')) {
+                env.classList.add('open');
+                setTimeout(() => { document.getElementById('btn-to-theater').style.display = 'inline-flex'; }, 1200);
+            }
+        }
+
+        // Stage 5: 3D Image Discard Frame Stack Deck Controller (Adjusted for 3 items)
+        let currentPhotoIndex = 3;
+        function flipPhoto() {
+            if (currentPhotoIndex === 3) {
+                const card = document.getElementById('pic3'); card.style.transform = 'translateX(370px) rotate(42deg) scale(0.8)'; card.style.opacity = '0';
+                setTimeout(() => { card.style.zIndex = '1'; }, 600); currentPhotoIndex = 2;
+            } else if (currentPhotoIndex === 2) {
+                const card = document.getElementById('pic2'); card.style.transform = 'translateX(-370px) rotate(-42deg) scale(0.8)'; card.style.opacity = '0';
+                setTimeout(() => { card.style.zIndex = '2'; }, 600); currentPhotoIndex = 1;
+            } else if (currentPhotoIndex === 1) {
+                const c3 = document.getElementById('pic3'); const c2 = document.getElementById('pic2');
+                c3.style.zIndex = '13'; c3.style.transform = 'none'; c3.style.opacity = '1';
+                c2.style.zIndex = '12'; c2.style.transform = 'none'; c2.style.opacity = '1';
+                currentPhotoIndex = 3;
+            }
+            document.getElementById('btn-to-scratch').style.visibility = 'visible';
+        }
+
+        // Stage 6: Love Scratch-Card Canvas Core Mechanics Engine
+        let scratchInitialized = false;
+        function initScratchCard() {
+            if (scratchInitialized) return;
+            const canvas = document.getElementById('scratchCanvas'); const ctx = canvas.getContext('2d');
+            canvas.width = 280; canvas.height = 280;
+            
+            ctx.fillStyle = '#b2bec3'; ctx.fillRect(0, 0, canvas.width, canvas.height);
+            ctx.font = 'bold 16px sans-serif'; ctx.fillStyle = '#636e72'; ctx.textAlign = 'center';
+            ctx.fillText('🎁 SCRATCH HERE MY LOVE ❤️', canvas.width / 2, canvas.height / 2);
+
+            let isDrawing = false;
+            function scratch(e) {
+                if (!isDrawing) return;
+                const rect = canvas.getBoundingClientRect();
+                const x = (e.clientX || e.touches[0].clientX) - rect.left;
+                const y = (e.clientY || e.touches[0].clientY) - rect.top;
+                ctx.globalCompositeOperation = 'destination-out'; ctx.beginPath();
+                ctx.arc(x, y, 25, 0, Math.PI * 2); ctx.fill();
+                checkScratchPercentage();
+            }
+
+            canvas.addEventListener('mousedown', () => isDrawing = true);
+            canvas.addEventListener('mouseup', () => isDrawing = false);
+            canvas.addEventListener('mousemove', scratch);
+            canvas.addEventListener('touchstart', () => isDrawing = true);
+            canvas.addEventListener('touchend', () => isDrawing = false);
+            canvas.addEventListener('touchmove', scratch);
+
+            let triggeredReveal = false;
+            function checkScratchPercentage() {
+                if (triggeredReveal) return;
+                const imgData = ctx.getImageData(0, 0, canvas.width, canvas.height);
+                let clearedPixels = 0;
+                for (let i = 0; i < imgData.data.length; i += 4) { if (imgData.data[i + 3] === 0) clearedPixels++; }
+                let totalPercent = (clearedPixels / (canvas.width * canvas.height)) * 100;
+                if (totalPercent > 50) {
+                    triggeredReveal = true; canvas.style.transition = 'opacity 0.6s'; canvas.style.opacity = '0';
+                    setTimeout(() => { canvas.style.display = 'none'; document.getElementById('btn-to-quiz').style.display = 'inline-flex'; }, 600);
+                }
+            }
+            scratchInitialized = true;
+        }
+
+        // Stage 7: Multi-Level Trivia Arcade Framework
+        let currentQuizStep = 0;
+        const quizDatabase = [
+            { q: "What date did our incredible relationship journey officially begin?", options: ["A) 11/06/2026", "B) 18/06/2025", "C) 18/05/2025"], correct: 1, success: "✨ Correct! That's our unforgettable milestone date!", fail: "❌ Try again love! Think back to June 2025!" },
+            { q: "How many years young are you turning today in our universe timeline?", options: ["A) 26 Years Old", "B) 27 Years Old", "C) 28 Years Old"], correct: 2, success: "🎉 Exactly! Beautiful, brilliant, and turning 28 today!", fail: "😅 Not quite right! You're turning 28 today!" }
         ];
-        
-        let activePhotoIndex = 0;
-        const displayEl = document.getElementById('gallery-display');
 
-        function setPhoto(index) {
-            displayEl.style.opacity = '0';
-            setTimeout(() => {
-                displayEl.style.backgroundImage = `url('${photoGallery[index]}')`;
-                displayEl.style.opacity = '1';
-            }, 150);
+        function renderQuizQuestion() {
+            document.getElementById('quiz-feedback').innerText = '';
+            if (currentQuizStep >= quizDatabase.length) {
+                document.getElementById('quiz-progress').innerText = "Arcade Verification Completed!";
+                document.getElementById('quiz-question').innerText = "You hold every record of us in your heart perfectly!";
+                document.getElementById('quiz-options-box').innerHTML = '';
+                document.getElementById('btn-to-balloons').style.display = 'inline-flex'; return;
+            }
+            const step = quizDatabase[currentQuizStep];
+            document.getElementById('quiz-progress').innerText = `Challenge ${currentQuizStep + 1} of ${quizDatabase.length}`;
+            document.getElementById('quiz-question').innerText = step.q;
+            let html = '';
+            step.options.forEach((opt, idx) => { html += `<div class="quiz-option" onclick="submitQuizAnswer(${idx})">${opt}</div>`; });
+            document.getElementById('quiz-options-box').innerHTML = html;
         }
 
-        function cyclePhotos() {
-            activePhotoIndex = (activePhotoIndex + 1) % photoGallery.length;
-            setPhoto(activePhotoIndex);
-        }
-        
-        // Initialize First Frame Profile Asset
-        setPhoto(activePhotoIndex);
-
-        // LOVE COUNTER
-        let currentLove = 999999;
-        function boostLove() {
-            currentLove += Math.floor(Math.random() * 50000) + 15000;
-            document.getElementById("love-counter").innerText = `Current: ${currentLove.toLocaleString()}% (overclocked)`;
-        }
-
-        // DECRYPTION PROTOCOL
-        function revealSecret() {
-            const overlay = document.getElementById("secret-overlay");
-            overlay.style.opacity = "0";
-            setTimeout(() => overlay.style.display = "none", 400);
+        function submitQuizAnswer(chosenIdx) {
+            const step = quizDatabase[currentQuizStep]; const feedback = document.getElementById('quiz-feedback');
+            const elements = document.getElementsByClassName('quiz-option');
+            for(let el of elements) { el.style.pointerEvents = 'none'; }
+            if(chosenIdx === step.correct) {
+                elements[chosenIdx].style.background = '#2ecc71'; elements[chosenIdx].style.color = 'white';
+                feedback.innerText = step.success; feedback.style.color = '#2ecc71'; currentQuizStep++;
+                setTimeout(renderQuizQuestion, 1800);
+            } else {
+                elements[chosenIdx].style.background = '#e74c3c'; elements[chosenIdx].style.color = 'white';
+                feedback.innerText = step.fail; feedback.style.color = '#e74c3c';
+                setTimeout(() => {
+                    elements[chosenIdx].style.background = '#f8f9fa'; elements[chosenIdx].style.color = 'unset';
+                    for(let el of elements) { el.style.pointerEvents = 'unset'; }
+                }, 1500);
+            }
         }
 
-        // CANDLE BLOW SENSOR MECHANISM
-        let audioContext, analyser, microphone, javascriptNode;
+        // Stage 8: Accelerated Balloon Popping Interactive Space Engine
+        let balloonScore = 0;
+        const alertLoveMotes = ["You are my total atmosphere! ✨", "I breathe your beautiful smile! 😍", "To our next 100 anniversaries! 🥂", "My love scales up every millisecond! ❤️", "You are direct celestial starlight! 🌟"];
+        function spawnBalloonsInBox() {
+            const box = document.getElementById('balloon-box'); box.innerHTML = ''; balloonScore = 0;
+            const colors = ['#ff6b81', '#ff4757', '#ff7f50', '#ffa502', '#6c5ce7', '#fd79a8'];
+            for(let i=0; i<10; i++) {
+                const balloon = document.createElement('div'); balloon.className = 'balloon';
+                balloon.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+                balloon.style.left = (Math.random() * 82 + 4) + '%';
+                balloon.style.animationDelay = (Math.random() * 5) + 's';
+                balloon.style.animationDuration = (Math.random() * 2 + 4) + 's';
+                balloon.onclick = function() {
+                    this.style.transform = 'scale(0)'; this.style.pointerEvents = 'none'; balloonScore++;
+                    document.getElementById('pop-count').innerText = balloonScore >= 4 ? '4+' : balloonScore;
+                    document.getElementById('quiz-feedback').innerText = alertLoveMotes[Math.floor(Math.random() * alertLoveMotes.length)]; 
+                    if(balloonScore >= 4) { document.getElementById('btn-to-cake').style.display = 'inline-flex'; }
+                };
+                box.appendChild(balloon);
+            }
+        }
 
-        function initMicEngine() {
-            document.getElementById('mic-prompt').style.display = 'none';
-            document.getElementById('mic-status').innerText = "Sensors: Online // Listening...";
-
-            navigator.mediaDevices.getUserMedia({ audio: true, video: false })
+        // Stage 9: WebAudio Digital Microphone Blow Filter Context
+        let micStream = null; let audioContext = null; let analyser = null;
+        function setupMicrophone() {
+            const statusText = document.getElementById('mic-status');
+            if (navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
+                navigator.mediaDevices.getUserMedia({ audio: true })
                 .then(function(stream) {
+                    micStream = stream; statusText.innerText = "🎤 Voice stream active: Blow into your microphone now!";
                     audioContext = new (window.AudioContext || window.webkitAudioContext)();
                     analyser = audioContext.createAnalyser();
-                    microphone = audioContext.createMediaStreamSource(stream);
-                    javascriptNode = audioContext.createScriptProcessor(2048, 1, 1);
-
-                    analyser.smoothingTimeConstant = 0.3;
-                    analyser.fftSize = 1024;
-
-                    microphone.connect(analyser);
-                    analyser.connect(javascriptNode);
-                    javascriptNode.connect(audioContext.destination);
-
-                    javascriptNode.onaudioprocess = function() {
-                        const array = new Uint8Array(analyser.frequencyBinCount);
-                        analyser.getByteFrequencyData(array);
-                        let values = 0;
-                        for (let i = 0; i < array.length; i++) { values += array[i]; }
-                        const average = values / array.length;
-                        document.getElementById('mic-bar').style.width = average * 2 + '%';
-                        if (average > 42) { extinguishCandles(); }
-                    };
+                    const source = audioContext.createMediaStreamSource(stream);
+                    source.connect(analyser); analyser.fftSize = 256;
+                    const bufferLength = analyser.frequencyBinCount; const dataArray = new Uint8Array(bufferLength);
+                    function parseBlowFreq() {
+                        if (!analyser) return; analyser.getByteFrequencyData(dataArray);
+                        let sum = 0; for(let i=0; i<bufferLength; i++) { sum += dataArray[i]; }
+                        if ((sum / bufferLength) > 58) { extinguishCandle(); } else { requestAnimationFrame(parseBlowFreq); }
+                    }
+                    requestAnimationFrame(parseBlowFreq);
                 })
                 .catch(function(err) {
-                    document.getElementById('mic-status').innerText = "Sensors: Failed // Permission Denied";
+                    console.log("Mic lock redirection: ", err); statusText.innerText = "Mic restricted. Tap the candle flame vectors directly!";
                 });
+            } else { statusText.innerText = "Tap the candle flame vectors directly!"; }
         }
 
-        function extinguishCandles() {
-            const flames = document.querySelectorAll('.flame');
-            flames.forEach(flame => { flame.style.display = 'none'; });
-            document.getElementById('mic-status').innerText = "STATUS: SUCCESS // WISH REGISTERED 🎂";
-            document.getElementById('mic-bar').style.width = '0%';
-            if(javascriptNode) javascriptNode.onaudioprocess = null;
+        function extinguishCandle() {
+            const flame = document.getElementById('cake-flame');
+            if(!flame.classList.contains('extinguished')) {
+                flame.classList.add('extinguished');
+                document.getElementById('mic-status').innerText = "✨ The birthday candle was blown out!";
+                document.getElementById('cake-instruction').innerText = "Your secret request has been processed to the stars.";
+                if (micStream) { micStream.getTracks().forEach(track => track.stop()); }
+                analyser = null; setTimeout(() => { document.getElementById('btn-to-finale').style.display = 'inline-flex'; }, 800);
+            }
+        }
+
+        // Stage 10: Canvas High Performance Matrix Particle Fireworks Overlay
+        const canvas = document.getElementById('canvas-fireworks'); const ctx = canvas.getContext('2d');
+        let fireworksAnimation = null; let particles = [];
+        function startFireworks() { canvas.style.display = 'block'; resizeCanvas(); window.addEventListener('resize', resizeCanvas); renderFireworks(); }
+        function resizeCanvas() { canvas.width = window.innerWidth; canvas.height = window.innerHeight; }
+
+        class FireworkParticle {
+            constructor(x, y, color) {
+                this.x = x; this.y = y; this.color = color; this.radius = Math.random() * 3.5 + 1;
+                const angle = Math.random() * Math.PI * 2; const speed = Math.random() * 6 + 2;
+                this.vx = Math.cos(angle) * speed; this.vy = Math.sin(angle) * speed;
+                this.alpha = 1; this.decay = Math.random() * 0.012 + 0.012;
+            }
+            draw() { ctx.save(); ctx.globalAlpha = this.alpha; ctx.beginPath(); ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2); ctx.fillStyle = this.color; ctx.fill(); ctx.restore(); }
+            update() { this.x += this.vx; this.y += this.vy; this.vy += 0.045; this.alpha -= this.decay; }
+        }
+
+        function spawnFirework() {
+            const x = Math.random() * canvas.width; const y = Math.random() * (canvas.height * 0.55);
+            const colors = ['#ff4757', '#ff6b81', '#ff7f50', '#ffa502', '#7bed9f', '#6c5ce7'];
+            const chosenColor = colors[Math.floor(Math.random() * colors.length)];
+            for (let i = 0; i < 45; i++) { particles.push(new FireworkParticle(x, y, chosenColor)); }
+        }
+
+        function renderFireworks() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            if (Math.random() < 0.06 && particles.length < 350) { spawnFirework(); }
+            for (let i = particles.length - 1; i >= 0; i--) {
+                particles[i].update(); particles[i].draw(); if (particles[i].alpha <= 0) { particles.splice(i, 1); }
+            }
+            fireworksAnimation = requestAnimationFrame(renderFireworks);
+        }
+
+        function restartJourneyMaster() {
+            if(fireworksAnimation) cancelAnimationFrame(fireworksAnimation);
+            canvas.style.display = 'none'; particles = [];
+            document.getElementById('envelope').classList.remove('open');
+            document.getElementById('btn-to-theater').style.display = 'none';
+            
+            const c3 = document.getElementById('pic3'); const c2 = document.getElementById('pic2');
+            c3.style.zIndex = '13'; c3.style.transform = 'none'; c3.style.opacity = '1';
+            c2.style.zIndex = '12'; c2.style.transform = 'none'; c2.style.opacity = '1';
+            currentPhotoIndex = 3;
+            
+            document.getElementById('btn-to-scratch').style.visibility = 'hidden';
+            document.getElementById('btn-to-quiz').style.display = 'none';
+            scratchInitialized = false;
+            
+            document.getElementById('btn-to-balloons').style.display = 'none';
+            document.getElementById('quiz-feedback').innerHTML = '';
+            currentQuizStep = 0;
+
+            document.getElementById('cake-flame').classList.remove('extinguished');
+            document.getElementById('cake-instruction').innerHTML = `Provide microphone hardware stream allowance and **blow firmly directly into your microphone profile**, or tap the flame vectors directly to extinguish!`;
+            document.getElementById('btn-to-finale').style.display = 'none';
+
+            nextScreen('finale', 'welcome');
         }
     </script>
 </body>
